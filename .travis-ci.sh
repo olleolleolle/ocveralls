@@ -14,11 +14,11 @@ esac
 
 echo "yes" | sudo add-apt-repository ppa:$ppa
 sudo apt-get update -qq
-sudo apt-get install -qq ocaml ocaml-native-compilers camlp4-extra opam
+sudo apt-get install -qq ocaml ocaml-native-compilers opam
 
 export OPAMYES=1
+export OPAMVERBOSE=1
 opam init
-eval `opam config env`
 
 git clone https://github.com/sagotch/ezjsonm.git
 opam pin add -k git -n ezjsonm ezjsonm
@@ -27,5 +27,7 @@ git clone https://github.com/sagotch/ocveralls.ml.git
 opam pin add -k git -n ocveralls ocveralls.ml
 
 opam install ${OPAM_DEPENDS}
+
+eval `opam config env`
 
 make coverage coveralls
