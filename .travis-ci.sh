@@ -20,10 +20,10 @@ export OPAMYES=1
 opam init
 
 git clone https://github.com/sagotch/ezjsonm.git
-opam pin add ezjsonm ezjsonm
+opam pin add -k git ezjsonm ezjsonm
 
 git clone https://github.com/sagotch/ocveralls.ml.git
-opam pin add ocveralls ocveralls.ml
+opam pin add -k git ocveralls ocveralls.ml
 
 opam install ${OPAM_DEPENDS}
 eval `opam config env`
