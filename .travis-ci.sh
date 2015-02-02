@@ -1,4 +1,4 @@
-OPAM_DEPENDS="ocamlfind ounit menhir"
+OPAM_DEPENDS="ocamlfind ounit menhir bisect"
 
 case "$OCAML_VERSION,$OPAM_VERSION" in
     3.12.1,1.0.0) ppa=avsm/ocaml312+opam10 ;;
@@ -18,6 +18,9 @@ sudo apt-get install -qq ocaml ocaml-native-compilers camlp4-extra opam
 
 export OPAMYES=1
 opam init
+
+git clone https://github.com/sagotch/ezjsonm.git
+opam pin add ezjsonm ezjsonm
 
 git clone https://github.com/sagotch/ocveralls.ml.git
 opam pin add ocveralls ocveralls.ml
