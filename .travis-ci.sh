@@ -1,4 +1,4 @@
-OPAM_DEPENDS="ocamlfind ounit menhir bisect ocveralls"
+OPAM_DEPENDS="ocamlfind ounit bisect ocveralls"
 
 case "$OCAML_VERSION,$OPAM_VERSION" in
     3.12.1,1.0.0) ppa=avsm/ocaml312+opam10 ;;
@@ -20,8 +20,8 @@ export OPAMYES=1
 export OPAMVERBOSE=1
 opam init
 
-git clone https://github.com/sagotch/ocveralls.ml.git
-opam pin add -k git -n ocveralls ocveralls.ml
+git clone https://github.com/sagotch/ocveralls.git
+opam pin add -k git -n ocveralls ocveralls
 
 opam install ${OPAM_DEPENDS}
 
