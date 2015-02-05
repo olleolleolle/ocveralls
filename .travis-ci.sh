@@ -20,9 +20,6 @@ export OPAMYES=1
 export OPAMVERBOSE=1
 opam init
 
-git clone https://github.com/sagotch/ezjsonm.git
-opam pin add -k git -n ezjsonm ezjsonm
-
 git clone https://github.com/sagotch/ocveralls.ml.git
 opam pin add -k git -n ocveralls ocveralls.ml
 
